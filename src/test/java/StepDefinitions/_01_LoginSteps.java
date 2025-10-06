@@ -1,9 +1,12 @@
 package StepDefinitions;
 
+import Pages.DialogContent;
 import Utilities.GWD;
 import io.cucumber.java.en.*;
 
 public class _01_LoginSteps {
+    DialogContent dc=new DialogContent();
+
     @Given("Navigate to Campus")
     public void navigate_to_campus() {
         System.out.println("Site açıldı.");
@@ -13,11 +16,14 @@ public class _01_LoginSteps {
     public void enter_username_and_password_and_click_login_button() {
         System.out.println("Username ve şifre gönderildi.");
 
+
+
     }
     @Then("User should login successfully")
     public void user_should_login_successfully() {
         System.out.println("Siteye girildiği doğrulandı.");
 
+        GWD.quitDriver();
     }
 
 
