@@ -19,5 +19,8 @@ public class DialogContent extends ParentPage {
     @FindBy(css = "[aria-label='LOGIN']")
     public WebElement loginButton;
 
+    @FindBy(css = "span[class='mat-mdc-tooltip-trigger logo-text']")
+    public WebElement headText;
+
 
 }
