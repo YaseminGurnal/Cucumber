@@ -15,6 +15,9 @@ public class _01_LoginSteps {
     @When("Enter username and password and click login button")
     public void enter_username_and_password_and_click_login_button() {
         System.out.println("Username ve şifre gönderildi.");
+        dc.mySendkeys(dc.username, "turkeyts");
+        dc.mySendkeys(dc.password,"TechnoStudy123");
+        dc.myClick(dc.loginButton);
 
 
 

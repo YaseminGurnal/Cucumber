@@ -10,13 +10,13 @@ public class DialogContent extends ParentPage {
         PageFactory.initElements(GWD.getDriver(),this);
     }
 
-    @FindBy(css = "")
+    @FindBy(css = "[formcontrolname='username']")
     public WebElement username;
 
-    @FindBy(css = "")
+    @FindBy(css = "[formcontrolname='password']")
     public WebElement password;
 
-    @FindBy(css = "")
+    @FindBy(css = "[aria-label='LOGIN']")
     public WebElement loginButton;
 
 
