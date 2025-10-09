@@ -23,4 +23,8 @@ public class DialogContent extends ParentPage {
     public WebElement headText;
 
 
+    @FindBy(xpath = "//ms-add-button[contains(@tooltip,'TITLE.ADD')]//button")
+    public WebElement addButton;
+
+
 }
