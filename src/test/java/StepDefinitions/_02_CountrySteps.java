@@ -5,6 +5,7 @@ import Pages.LeftNav;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.apache.commons.lang3.RandomStringUtils;
 
 public class _02_CountrySteps {
     LeftNav ln=new LeftNav();
@@ -19,7 +20,12 @@ public class _02_CountrySteps {
 
     @When("Create a country")
     public void createACountry() {
+        String ulkeAdı= RandomStringUtils.randomAlphanumeric(8);//8 tane karışık harf verir.
+        String ulkeKodu=RandomStringUtils.randomNumeric(4); //Karışık rakam verir.
+
         dc.myClick(dc.addButton);
+        dc.mySendkeys(dc.nameInput, ulkeAdı);
+        dc.mySendkeys(dc.codeInput, ulkeKodu);
     }
 
     @Then("Succsess message should be displayed")
