@@ -31,7 +31,7 @@ public class _01_LoginSteps {
     public void user_should_login_successfully() {
         System.out.println("Siteye girildiği doğrulandı.");
 
-        dc.verifyContainsText(dc.headText, "Internship");
+        dc.LoginContainsText(dc.headText, "Internship");
 
 
     }

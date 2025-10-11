@@ -26,11 +26,12 @@ public class _02_CountrySteps {
         dc.myClick(dc.addButton);
         dc.mySendkeys(dc.nameInput, ulkeAdı);
         dc.mySendkeys(dc.codeInput, ulkeKodu);
+        dc.myClick(dc.saveButton);
     }
 
     @Then("Succsess message should be displayed")
     public void succsessMessageShouldBeDisplayed() {
-
+    dc.verfyMessageContainsText(dc.successMessage,"success");
 
     }
 }
