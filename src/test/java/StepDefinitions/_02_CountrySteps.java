@@ -31,7 +31,7 @@ public class _02_CountrySteps {
 
     @Then("Succsess message should be displayed")
     public void succsessMessageShouldBeDisplayed() {
-    dc.verfyMessageContainsText(dc.successMessage,"success");
+        dc.verfyMessageContainsText("success");
 
     }
 
