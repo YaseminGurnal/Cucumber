@@ -39,13 +39,5 @@ public class ParentPage{
 
     }
 
-    public void verfyMessageContainsText(String value){
-        List<WebElement>mesajKutusuElementleri=wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//hot-toast-container/div/div/div/*"),0));
-        //Yukarıdaki elemanlar en az 1 den fazla olana kadar bekle yani mesaj kutusu dolana kadar
-
-        //WebElement mesajKutusuParent1=GWD.getDriver().findElement(By.xpath("//hot-toast-container/div/div/div"));
-        WebElement  mesajKutusuParent2=GWD.getDriver().findElement(By.tagName("mat-panel-description"));
-        Assert.assertTrue(mesajKutusuParent2.getAttribute("innerHTML").toLowerCase().contains(value.toLowerCase()));
-    }
 
 }

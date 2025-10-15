@@ -3,6 +3,7 @@ package StepDefinitions;
 import Pages.DialogContent;
 import Pages.LeftNav;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.commons.lang3.RandomStringUtils;
 
@@ -34,5 +35,16 @@ public class _03_CitizenShipSteps {
         dc.mySendkeys(dc.nameInput,name);
         dc.mySendkeys(dc.shortName, shortKod);
         dc.myClick(dc.saveButton);
+    }
+
+    @Then("Already exit  message should be displayed")
+    public void alreadyExitMessageShouldBeDisplayed() {
+        dc.verifyMessageContainsText("already");
+        
+    }
+
+    @When("User delete name as {string}")
+    public void userDeleteNameAs(String deleteName) {
+        dc.deleteItem(deleteName);
     }
 }
