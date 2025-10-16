@@ -68,6 +68,8 @@ public class DialogContent extends ParentPage {
        public void deleteItem(String deleteName){
            mySendkeys(searchInput,deleteName);
            myClick(searchButton);
+           //Sayfa yenilenene kadar bekle arama sonuçlanana kadar bekle
+           wait.until(ExpectedConditions.elementToBeClickable(this.searchButton));
            myClick(deleteImageBtn);
            myClick(deleteDıalogBtn);
        }
