@@ -47,4 +47,10 @@ public class _03_CitizenShipSteps {
     public void userDeleteNameAs(String deleteName) {
         dc.deleteItem(deleteName);
     }
+
+    public static class _05_DataTableSteps {
+        @And("Click on the Element in LeftNav")
+        public void clickOnTheElementInLeftNav() {
+        }
+    }
 }

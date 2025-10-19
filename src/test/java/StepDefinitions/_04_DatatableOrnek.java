@@ -25,4 +25,15 @@ public class _04_DatatableOrnek {
         }
 
     }
+
+    @And("Write username and password as Datatable")
+    public void writeUsernameAndPassworAsDatatable(DataTable dtUserPassword) {
+        List<List<String>>listUserPass=dtUserPassword.asLists(String.class);
+
+        for (int i = 0; i <listUserPass.size() ; i++) {
+            System.out.println(listUserPass.get(i).get(0)+" "+listUserPass.get(i).get(0));
+
+        }
+
+    }
 }
