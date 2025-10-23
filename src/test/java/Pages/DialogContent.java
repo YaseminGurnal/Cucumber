@@ -12,7 +12,7 @@ import org.testng.Assert;
 
 public class DialogContent extends ParentPage {
     public DialogContent() {
-        PageFactory.initElements(GWD.getDriver(),this);
+        PageFactory.initElements(GWD.getDriver(), this);
     }
 
     @FindBy(css = "[formcontrolname='username']")
@@ -31,7 +31,7 @@ public class DialogContent extends ParentPage {
     public WebElement addButton;
 
     @FindBy(xpath = "//ms-text-field[@formcontrolname='name']//input")
-    public  WebElement nameInput;
+    public WebElement nameInput;
 
     @FindBy(xpath = "//ms-text-field[@formcontrolname='code']//input")
     public WebElement codeInput;
@@ -60,19 +60,51 @@ public class DialogContent extends ParentPage {
     @FindBy(tagName = "//button[@type='submit']")
     public WebElement deleteDıalogBtn;
 
-    public void verifyMessageContainsText(String value){
-        wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//hot-toast-container/div/div/div//*"),0));
-        Assert.assertTrue( this.messageBox.getAttribute("innerHTML").toLowerCase().contains(value.toLowerCase()));
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='budgetAccountIntegrationCode']//input")
+    public WebElement integrationCode;
+
+    @FindBy(xpath = "//ms-integer-field[@formcontrolname='priority']//input")
+    public WebElement priorityCode;
+
+    @FindBy(xpath = "//mat-slide-toggle[@formcontrolname='active']//button")
+    public WebElement toggleBar;
+
+    public void verifyMessageContainsText(String value) {
+        wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//hot-toast-container/div/div/div//*"), 0));
+        Assert.assertTrue(this.messageBox.getAttribute("innerHTML").toLowerCase().contains(value.toLowerCase()));
 
     }
-       public void deleteItem(String deleteName){
-           mySendkeys(searchInput,deleteName);
-           myClick(searchButton);
-           //Sayfa yenilenene kadar bekle arama sonuçlanana kadar bekle
-           wait.until(ExpectedConditions.elementToBeClickable(this.searchButton));
-           myClick(deleteImageBtn);
-           myClick(deleteDıalogBtn);
-       }
 
+    public void deleteItem(String deleteName) {
+        mySendkeys(searchInput, deleteName);
+        myClick(searchButton);
+        //Sayfa yenilenene kadar bekle arama sonuçlanana kadar bekle
+        wait.until(ExpectedConditions.elementToBeClickable(this.searchButton));
+        myClick(deleteImageBtn);
+        myClick(deleteDıalogBtn);
+    }
 
+    public WebElement getWebElement(String strElementName) {
+
+        switch (strElementName) {
+            case "addButton":
+                return this.addButton;
+            case "saveButton":
+                return this.saveButton;
+            case "nameInput":
+                return this.nameInput;
+            case "codeInput":
+                return this.codeInput;
+            case "shortName":
+                return this.shortName;
+            case "integrationCode":
+                return this.integrationCode;
+            case "priorityCode":
+                return this.priorityCode;
+            case "toggleBar":
+                return this.toggleBar;
+
+        }
+        return null;
+    }
 }
