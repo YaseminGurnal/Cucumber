@@ -1,6 +1,6 @@
 #Cities menusunun kayıt ve silme özelliğini test ediniz.
 
-Feature: Cities Functionality
+Feature: Cities Functionality Datatable
 
   Background:
     Given Navigate to Campus

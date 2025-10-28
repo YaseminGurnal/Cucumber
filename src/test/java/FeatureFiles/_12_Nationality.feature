@@ -1,4 +1,4 @@
-Feature: DataTable and Scenario Outline
+Feature:Nationality DataTable and Scenario Outline
 
   Background:
     Given Navigate to Campus
