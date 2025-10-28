@@ -96,7 +96,7 @@ public class DialogContent extends ParentPage {
 
     public WebElement getWebElement(String strElementName) {
 
-        switch (strElementName) {
+        switch (strElementName.trim()) {
             case "addButton":
                 return this.addButton;
             case "saveButton":
