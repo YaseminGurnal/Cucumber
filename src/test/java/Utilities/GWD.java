@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.nio.channels.ScatteringByteChannel;
 import java.time.Duration;
+import java.util.Locale;
 
 public class GWD {
     //Genel Web Driver
@@ -12,6 +13,9 @@ public class GWD {
     private static WebDriver driver;
 
     public static WebDriver getDriver() {
+        Locale.setDefault(new Locale("EN"));
+        System.setProperty("user.language", "EN");
+
         if (driver == null) { //hiç oluşturulmamışsa
             driver = new ChromeDriver();
             driver.manage().window().maximize();
