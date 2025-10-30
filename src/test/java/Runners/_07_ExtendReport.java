@@ -17,8 +17,7 @@ import org.testng.annotations.AfterClass;
 
 public class _07_ExtendReport extends AbstractTestNGCucumberTests {
         @AfterClass
-        public  static void writeExtendReport()
-        {
+        public static void writeExtendReport() {
                 ExtentService.getInstance().setSystemInfo("Windows User Name", System.getProperty("user.name"));
                 ExtentService.getInstance().setSystemInfo("Time Zone", System.getProperty("user.timezone"));
                 ExtentService.getInstance().setSystemInfo("User Name", "Yasemin Gurnal");
