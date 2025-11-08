@@ -40,4 +40,6 @@ public class ParentPage{
     }
 
 
+    public void verfyMessageContainsText(String success) {
+    }
 }
