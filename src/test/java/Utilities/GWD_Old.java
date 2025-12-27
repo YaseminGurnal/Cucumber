@@ -33,7 +33,6 @@ public class GWD_Old {
         if (threadDriver.get() == null) { //Bu hatttaki driver null ise
             switch (threadBrowserName.get()) { //Hatta hangi browser adı var
                 case "Firefox":
-
                     FirefoxOptions FireFoxOptions = new FirefoxOptions();
                     FireFoxOptions.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
                     threadDriver.set(new FirefoxDriver(FireFoxOptions));
