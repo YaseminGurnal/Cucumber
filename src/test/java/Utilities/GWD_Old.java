@@ -2,8 +2,10 @@ package Utilities;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 import java.time.Duration;
 import java.util.Locale;
@@ -24,18 +26,24 @@ public class GWD_Old {
         Locale.setDefault(new Locale("EN"));
         System.setProperty("user.language", "EN");
 
-        if (threadBrowserName.get()==null)
+        if (threadBrowserName.get() == null)
             threadBrowserName.set("chrome");
 
 
         if (threadDriver.get() == null) { //Bu hatttaki driver null ise
             switch (threadBrowserName.get()) { //Hatta hangi browser adı var
                 case "Firefox":
-                    threadDriver.set(new FirefoxDriver());break;
+
+                    FirefoxOptions FireFoxOptions = new FirefoxOptions();
+                    FireFoxOptions.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+                    threadDriver.set(new FirefoxDriver(FireFoxOptions));
+                    break;
                 case "Edge":
-                    threadDriver.set(new EdgeDriver());break;
+                    threadDriver.set(new EdgeDriver());
+                    break;
                 default:
-                    threadDriver.set(new ChromeDriver());break;
+                    threadDriver.set(new ChromeDriver());
+                    break;
             }
 
             //Bu thread de bir tane driver set et
