@@ -79,6 +79,9 @@ public class DialogContent extends ParentPage {
     @FindBy(xpath = "(//mat-option[@role='option'])[3]//span")
     public WebElement countryOption;
 
+    @FindBy(xpath = "//body//tr/td[2]")
+    public WebElement nameList;
+
     public void verifyMessageContainsText(String value) {
         wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//hot-toast-container/div/div/div//*"), 0));
         Assert.assertTrue(this.messageBox.getAttribute("innerHTML").toLowerCase().contains(value.toLowerCase()));
