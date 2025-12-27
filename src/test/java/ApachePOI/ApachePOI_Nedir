@@ -1,0 +1,8 @@
+Excelden veri okumasını nasıl yaparsın?
+ApachePOI ile yapıyorum
+ApachePOI Nedir?
+Excelden veri okuma ve yazma aracı,kütüphanesi
+ApachePOI yi nasıl kullanıyorsun?
+FileInputStream oluşturuyorum (Dosyayı yanı exceli okumak için açma)
+FileInputStream - WorkBook - Sheet -Row - Cell ilişki sırasına göre okuyorum
+İnterwiev Sorusu
